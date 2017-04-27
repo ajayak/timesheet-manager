@@ -15,15 +15,15 @@ class ExcelTable extends Component {
     const headings = allRows[0];
     const rows = allRows.slice(1);
     return (
-      <Table selectable={false}>
-        <TableHeader>
+      <Table>
+        <TableHeader displaySelectAll={false}>
           <TableRow>
             {headings.map(heading => (
               <TableHeaderColumn key={heading}>{heading}</TableHeaderColumn>
             ))}
           </TableRow>
         </TableHeader>
-        <TableBody>
+        <TableBody displayRowCheckbox={false}>
           {rows.map(row => (
             <TableRow key={row}>
               {row.map(value => (
