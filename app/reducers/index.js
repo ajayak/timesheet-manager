@@ -2,10 +2,10 @@
 import { combineReducers } from 'redux';
 import { routerReducer as router } from 'react-router-redux';
 import { reducer as formReducer } from 'redux-form';
-import counter from './counter';
+import file from './fileReducer';
 
 const rootReducer = combineReducers({
-  counter,
+  file,
   router,
   form: formReducer
 });

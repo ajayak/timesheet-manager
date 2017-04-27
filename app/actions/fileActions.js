@@ -1,8 +1,12 @@
 // @flow
-import type { counterStateType } from '../reducers/counter';
+import type { counterStateType } from '../reducers/fileReducer';
+import {
+  DECREMENT_COUNTER,
+  INCREMENT_COUNTER,
+  FILE_UPLOAD
+} from './constants';
 
-export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
-export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
+const XLSX = require('xlsx');
 
 export function increment() {
   return {
@@ -33,5 +37,13 @@ export function incrementAsync(delay: number = 1000) {
     setTimeout(() => {
       dispatch(increment());
     }, delay);
+  };
+}
+
+export function parseFile(file) {
+  const workbook = XLSX.readFile(file.path);
+  return {
+    type: FILE_UPLOAD,
+    payload: workbook
   };
 }
