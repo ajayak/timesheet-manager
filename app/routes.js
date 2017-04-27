@@ -10,7 +10,7 @@ export default () => (
   <Router>
     <App>
       <Switch>
-        <Route path="/counter" component={CounterPage} />
+        <Route path="/main" component={CounterPage} />
         <Route path="/" component={HomePage} />
       </Switch>
     </App>

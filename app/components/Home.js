@@ -12,7 +12,7 @@ export default class Home extends Component {
         <div className={styles.container} data-tid="container">
           <h2>{info.productName}</h2>
           <h3>{info.version}</h3>
-          <Link to="/counter">to Counter</Link>
+          <Link to="/main">Enter</Link>
         </div>
       </div>
     );
