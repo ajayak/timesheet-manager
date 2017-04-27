@@ -23,7 +23,7 @@ function parseWorkbook(workbook) {
   return result;
 }
 
-export default function counter(state = [], action: actionType) {
+export default function counter(state = {}, action: actionType) {
   switch (action.type) {
     case INCREMENT_COUNTER:
       return state + 1;

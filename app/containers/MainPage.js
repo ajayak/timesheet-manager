@@ -5,7 +5,7 @@ import * as FileActions from '../actions/fileActions';
 
 function mapStateToProps(state) {
   return {
-    counter: state.counter
+    file: state.file
   };
 }
 
