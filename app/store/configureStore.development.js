@@ -5,12 +5,11 @@ import { createBrowserHistory } from 'history';
 import { routerMiddleware, push } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
 import rootReducer from '../reducers';
-import * as counterActions from '../actions/counter';
-import type { counterStateType } from '../reducers/counter';
+import * as fileActions from '../actions/fileActions';
 
 const history = createBrowserHistory();
 
-const configureStore = (initialState: ?counterStateType) => {
+const configureStore = (initialState) => {
   // Redux Configuration
   const middleware = [];
   const enhancers = [];
@@ -31,7 +30,7 @@ const configureStore = (initialState: ?counterStateType) => {
 
   // Redux DevTools Configuration
   const actionCreators = {
-    ...counterActions,
+    ...fileActions,
     push,
   };
   // If Redux DevTools Extension is installed use it, otherwise use Redux compose
