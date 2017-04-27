@@ -2,7 +2,8 @@
 import {
   INCREMENT_COUNTER,
   DECREMENT_COUNTER,
-  FILE_UPLOAD
+  FILE_UPLOAD,
+  CLEAR_FILE
 } from '../actions/constants';
 
 type actionType = {
@@ -32,6 +33,8 @@ export default function counter(state = {}, action: actionType) {
     case FILE_UPLOAD:
       const workbook = parseWorkbook(action.payload);
       return workbook;
+    case CLEAR_FILE:
+      return {};
     default:
       return state;
   }

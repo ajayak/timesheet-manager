@@ -3,7 +3,8 @@ import type { counterStateType } from '../reducers/fileReducer';
 import {
   DECREMENT_COUNTER,
   INCREMENT_COUNTER,
-  FILE_UPLOAD
+  FILE_UPLOAD,
+  CLEAR_FILE
 } from './constants';
 
 const XLSX = require('xlsx');
@@ -45,5 +46,11 @@ export function parseFile(file) {
   return {
     type: FILE_UPLOAD,
     payload: workbook
+  };
+}
+
+export function clearFile() {
+  return {
+    type: CLEAR_FILE
   };
 }
