@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { AppContainer } from 'react-hot-loader';
 import Root from './containers/Root';
 import { configureStore, history } from './store/configureStore';
@@ -9,7 +10,9 @@ const store = configureStore();
 
 render(
   <AppContainer>
-    <Root store={store} history={history} />
+    <MuiThemeProvider>
+      <Root store={store} history={history} />
+    </MuiThemeProvider>
   </AppContainer>,
   document.getElementById('root')
 );
@@ -19,7 +22,9 @@ if (module.hot) {
     const NextRoot = require('./containers/Root'); // eslint-disable-line global-require
     render(
       <AppContainer>
-        <NextRoot store={store} history={history} />
+        <MuiThemeProvider>
+          <NextRoot store={store} history={history} />
+        </MuiThemeProvider>
       </AppContainer>,
       document.getElementById('root')
     );

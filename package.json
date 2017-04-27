@@ -1,6 +1,6 @@
 {
   "name": "timesheet-manager",
-  "productName": "TimeSheet Maneger",
+  "productName": "TimeSheet Manager",
   "version": "0.0.1",
   "description": "EVRY timesheet automation tool",
   "main": "main.js",
