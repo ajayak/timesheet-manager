@@ -1,7 +1,5 @@
 // @flow
 import {
-  INCREMENT_COUNTER,
-  DECREMENT_COUNTER,
   FILE_UPLOAD,
   CLEAR_FILE
 } from '../actions/constants';
@@ -26,10 +24,6 @@ function parseWorkbook(workbook) {
 
 export default function counter(state = {}, action: actionType) {
   switch (action.type) {
-    case INCREMENT_COUNTER:
-      return state + 1;
-    case DECREMENT_COUNTER:
-      return state - 1;
     case FILE_UPLOAD:
       const workbook = parseWorkbook(action.payload);
       return workbook;

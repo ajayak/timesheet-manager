@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import Main from '../components/Main';
 import * as FileActions from '../actions/fileActions';
+import { submitForm } from '../actions/formAction';
 
 const validate = values => {
   const errors = {};
@@ -15,10 +16,6 @@ const validate = values => {
   return errors;
 };
 
-function onFormSubmit(values) {
-  console.log(values);
-}
-
 function mapStateToProps(state) {
   return {
     file: state.file
@@ -28,7 +25,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(FileActions, dispatch),
-    onFormSubmit
+    onFormSubmit: submitForm
   };
 }
 
@@ -37,5 +34,5 @@ export default connect(
   mapDispatchToProps
 )(reduxForm({
   form: 'main',
-  validate
+  validate,
 })(Main));

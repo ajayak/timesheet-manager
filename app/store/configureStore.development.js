@@ -6,6 +6,7 @@ import { routerMiddleware, push } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
 import rootReducer from '../reducers';
 import * as fileActions from '../actions/fileActions';
+import * as formActions from '../actions/formAction';
 
 const history = createBrowserHistory();
 
@@ -31,6 +32,7 @@ const configureStore = (initialState) => {
   // Redux DevTools Configuration
   const actionCreators = {
     ...fileActions,
+    ...formActions,
     push,
   };
   // If Redux DevTools Extension is installed use it, otherwise use Redux compose
